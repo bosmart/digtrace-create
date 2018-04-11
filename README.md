@@ -3,7 +3,7 @@
 Clone the repo and build docker image:  
 ```git clone https://github.com/bosmart/digtrace-create.git```  
 ```cd digtrace-create```  
-```docker build -t digtrace .```
+```sudo docker build -t digtrace .```
 
 Run in interactive mode - will mount your home folder to `/mnt`:  
 ```docker run -it -v ~:/mnt digtrace```
