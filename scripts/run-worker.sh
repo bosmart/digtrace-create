@@ -47,8 +47,8 @@ do
 	echo python ply2bin.py $OUT_INDIV/outputs/reconstruction_global
 	python ply2bin.py $OUT_INDIV/outputs/reconstruction_global
 
-#	mv $f/* $OUT_INDIV/
-#	rm -rf $f
+	mv $f/* $OUT_INDIV/
+	rm -rf $f
     fi
 
     COUNTER=$((COUNTER+1))
