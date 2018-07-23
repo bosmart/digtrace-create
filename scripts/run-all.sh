@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 export INPUT_FOLDER=/mnt/inputs
 export OUTPUT_FOLDER=/mnt/outputs
-export WORKERS=3
+export WORKERS=$1
+
+[ -z "$WORKERS" ] && export WORKERS=3
 
 echo Downloading sensor database
 wget https://www.dropbox.com/s/2qvwz1a8efkeh6m/sensor_width_camera_database.txt
