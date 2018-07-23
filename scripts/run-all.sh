@@ -6,7 +6,7 @@ export WORKERS=$1
 [ -z "$WORKERS" ] && export WORKERS=3
 
 echo Downloading sensor database
-wget https://www.dropbox.com/s/2qvwz1a8efkeh6m/sensor_width_camera_database.txt
+wget https://www.dropbox.com/s/jvboq4pgprdy8kl/sensor_width_camera_database.txt
 mv ./sensor_width_camera_database.txt /source/openMVG/src/software/SfM/../../openMVG/exif/sensor_width_database/sensor_width_camera_database.txt
 
 if (( $WORKERS == 2))
