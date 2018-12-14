@@ -22,7 +22,8 @@ build-essential \
 wget \
 tmux \
 python-pip \
-nano
+nano \
+libpng-dev
 
 RUN add-apt-repository ppa:deadsnakes/ppa && apt-get update && apt-get install -y \
 python3.6 \
@@ -35,6 +36,7 @@ ADD ./scripts /scripts
 # Clone the repos
 RUN git clone --recursive https://github.com/openMVG/openMVG.git
 RUN git clone https://github.com/pmoulon/CMVS-PMVS
+RUN git clone https://github.com/mkazhdan/PoissonRecon.git
 
 # Build openMVG
 WORKDIR /source/openMVG/openMVG_Build
@@ -48,5 +50,9 @@ RUN cmake . ../program
 RUN make -j$(cat /proc/cpuinfo | grep processor | wc -l)
 RUN make install
 
-WORKDIR /scripts
+# Build PoissonRecon
+WORKDIR /source/PoissonRecon
+RUN make -j$(cat /proc/cpuinfo | grep processor | wc -l)
+RUN make install
 
+WORKDIR /scripts
