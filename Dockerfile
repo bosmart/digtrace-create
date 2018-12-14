@@ -53,6 +53,5 @@ RUN make install
 # Build PoissonRecon
 WORKDIR /source/PoissonRecon
 RUN make -j$(cat /proc/cpuinfo | grep processor | wc -l)
-RUN make install
 
 WORKDIR /scripts
